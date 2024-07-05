@@ -1,0 +1,77 @@
+% !TeX program = lualatex
+
+\documentclass[a4paper, 12pt]{scrartcl}
+
+\input{preamble}
+
+% load some custom packages
+%\usepackage{somepackage}
+
+% load file with bibliography
+\addbibresource{references.bib}
+
+\title{Der Titel deines Artikels}
+\author{Dein Name}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+\noindent Ein passendes Abstract kommt immer gut. Dann bekommen die Leute schon mal einen ersten Eindruck. Keywords wären nett, sind aber nicht verpflichtend. Hauptsache, die Leute wissen ungefähr um was es grob gehen soll.
+\end{abstract}
+
+\section{Deine spitzen Einleitung}
+Alles beginnt mit einer Einleitung. Hier führst du dein Abstract so richtig aus. Worum geht's? Was ist das Problem? Wie geht man's an? Was kommt am Ende raus? Und warum ist das so cool?
+
+\section{Dein (Wahnsinns-)Text}
+Jetzt kommt der eigentliche Inhalt, die Botschaft, die du rüberbringen möchtest. Falls du noch nicht die wichtigstens Bond-Filme mit Sean Connery kennst, schau mal in Tab.~\ref{tab:bond}. 
+
+\begin{table*}[t]
+    \centering
+    \caption{Ein paar Bond-Filme mit Sean Connery.}
+    \label{tab:bond}
+    \setlength\defaultaddspace{0.5em}
+    \begin{tabularx}{\textwidth}{llllll}
+        \toprule
+        Titel & Jahr & Bösewicht & Bond Girl & Auto \\
+        \midrule
+        Dr No & 1962 & Doctor No & Ursula Andress & Sunbeam Alpine \\
+        From Russia With Love & 1963 & Red Grant & Daniela Bianchi & Bentley Mark IV \\
+        Goldfinger & 1964 & Goldfinger & Honor Blackman & Aston Martin DB5 \\
+        Feuerball & 1965 & Emilio Largo & Claudine Auger & Aston Martin DB5 \\
+        Man lebt nur zweimal & 1967 & Blofeld & Akiko Wakabayashi & Toyota 2000 GT \\
+        \bottomrule
+    \end{tabularx}
+\end{table*}
+Kennst du das Bild in Abb.~\ref{fig:tex}? Falls nicht, du weißt ja wo es steht...
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\textwidth]{assets/tex.jpg}
+    \caption{Was für ein schönes Bild! Habe ich von \cite{online}.}
+    \label{fig:tex}
+\end{figure}
+Unbedingt nicht an Zitaten sparen! Warum nicht mal einen Blick in \cite{article} oder \cite{book} werfen?
+
+Falls Gleichungen am Ende eines Satzes stehen, solltest du immer einen Punkt setzen:
+\begin{equation}
+    \int_{-\infty}^{+\infty}e^{-x^2}\mathrm{d}x=\sqrt{\pi}.
+\end{equation}
+Wenn du möchtest, kannst du eine kurze Rechnung, die aus mehreren Schritten besteht, einfach mit der \texttt{align} Umgebung setzen:
+\begin{align*}
+    \int_a^b\sin(x)\mathrm{d}x &= -\frac{1}{2}\left[e^{ib}-e^{ia}-\left(e^{-ib}-e^{-ia}\right)\right] \\
+    &= \frac{e^{ia}+e^{-ia}}{2} - \frac{e^{ib}+e^{-ib}}{2} \\
+    &= \cos(a) - \cos(b).
+\end{align*}
+
+\section{Schluss}
+Hier kannst du die wesentlichen Knüller von oben nochmal kurz zusammenfassen. Vielleicht kannst du auch einen Ausblick geben, worüber du oder jemand anderes noch schreiben könntest.
+
+% references
+\begingroup
+\RaggedRight
+\printbibliography
+\endgroup
+
+\end{document}
